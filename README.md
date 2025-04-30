@@ -1,46 +1,55 @@
 # 🌐 WebAPI Project
 
-This project contains the backend API for the application. It defines routes and logic that allow you to interact with the database through HTTP requests.
+Welcome to the **WebAPI** backend! This project powers the application's connection to the database by exposing a series of HTTP routes (also called endpoints). It allows you to perform operations like retrieving, creating, or deleting data without ever touching the database logic yourself.
 
 ---
 
-## 📌 Purpose
+## 📬 What is a Route?
 
-The WebAPI exposes a set of endpoints that handle operations like:
+A **route** is simply a URL endpoint exposed by the API. For example:
 
-- Creating and retrieving departments (`/api/department`)
-- Managing users (`/api/users`)
-- Other entity-based operations (only where needed)
+```
+GET /api/departments
+```
 
-> These endpoints are used to interact with the database. You will use them from the **WinUI project** by sending HTTP requests (GET, POST, DELETE, etc.).
-
----
-
-## ⚠️ Do Not Modify
-
-You **should not** make any changes to this WebAPI project. It has been fully set up to support the application and should remain untouched unless explicitly instructed.
-
-All your work will be in the **WinUI project**.
+This will return a list of all departments. You don't need to worry about how the data is fetched — that's handled inside this API. Your job is to **make requests** to these routes from the **WinUI** project.
 
 ---
 
-## 🗄️ Database Setup
+## ⚙️ Setup Instructions
 
-To run the API properly:
+Before you start using the API, you **must** complete the following setup:
 
-1. Create a **SQL Server database** named `HospitalDb`.
-2. Run the **initialization scripts** found in:
+1. 🔧 Open **SQL Server Management Studio**.
+2. 🗄️ Create a database named: `HospitalDb`.
+3. 📥 Run the **initialization scripts** located in the `Data/` folder of this project.
 
-   ```
-   Data/
-   ```
-
-   These scripts will create the necessary tables and seed any required data.
+This will ensure all required tables and initial data are available for the API to function properly.
 
 ---
 
-## ✅ Summary
+## 🚫 Do Not Modify This Project
 
-- You **do not code here**.
-- Use the provided endpoints from the WinUI client.
-- Make sure `HospitalDb` exists and is properly initialized before running the app.
+> You **must not** make any changes to this WebAPI project.  
+
+All your development will happen inside the **WinUI project**. This API is already set up and ready to use — treat it as a backend service you consume.
+
+---
+
+## ✅ Available Endpoints
+
+Most entities exposed by the API support:
+
+- `GET` – Retrieve data
+- `POST` – Create new records
+- `DELETE` – Remove records
+
+For example:
+
+- `/api/departments`
+- `/api/users`
+- ...and more, where relevant
+
+Note: Not all routes support every HTTP method if it wasn't necessary.
+
+---
