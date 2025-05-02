@@ -1,3 +1,13 @@
+CREATE DATABASE HospitalDb
+USE HospitalDb
+
+CREATE TABLE Departments (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	Name VARCHAR(100) NOT NULL
+);
+
+INSERT INTO Departments(Name) VALUES ('Pediatry'), ('Oncology')
+
 CREATE TABLE Users (
     UserId INT IDENTITY(1,1) PRIMARY KEY, -- Auto-incrementing primary key
     Username NVARCHAR(50) NOT NULL UNIQUE, -- Unique username
